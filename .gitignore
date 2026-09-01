@@ -1,0 +1,10 @@
+# System junk files
+.DS_Store
+Thumbs.db
+
+# Editor configurations
+.vscode/
+.idea/
+
+# Local server logs
+*.log
