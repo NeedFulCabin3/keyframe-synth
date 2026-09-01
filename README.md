@@ -5,26 +5,26 @@ A polyphonic browser instrument engineered directly around the Web Audio API. Pl
 
 Most web audio projects struggle with clicky pop artifacts during attack/release cycles or hit browser auto-play policies head-on. keyframe-synth solves this by decoupling DOM triggers from sound generation.
 
-It handles browser AudioContext suspension states on the fly and uses rapid linear/exponential gain ramping so tone start and end points sound clean. No MP3 samples to load, no external assets to download—just pure browser signal generation.
+It handles browser AudioCon suspension states on the fly and uses rapid linear/exponential gain ramping so tone start and end points sound clean. No MP3 samples to load, no external assets to download—just pure browser signal generation.
 
 ## How It Works
 
-**1. AudioContext Initialization:** Waits for a user gesture (keydown, click, touch) to resume or boot the browser's audio graph.
-**2. Frequency Map Lookup:** Maps data attributes on DOM keys (e.g., ```bashC4```, ```bashA4```) directly to exact Hertz values (*A4 = 440 Hz*).
-**3. Oscillator Ramping:** On activation, spins up a triangle waveform oscillator and ramps gain from ```bash0``` to ```bash0.4``` over ```bash10ms``` to eliminate attack clicks.
-**4. Smooth Decay Release:** On key release, executes an exponential decay down to ```text0.0001``` over ```text80ms``` before shutting down and destroying the active oscillator object to prevent memory leaks.
+**1. AudioCon Initialization:** Waits for a user gesture (keydown, click, touch) to resume or boot the browser's audio graph.
+**2. Frequency Map Lookup:** Maps data attributes on DOM keys (e.g., ```C4```, ```A4```) directly to exact Hertz values (*A4 = 440 Hz*).
+**3. Oscillator Ramping:** On activation, spins up a triangle waveform oscillator and ramps gain from ```0``` to ```0.4``` over ```10ms``` to eliminate attack clicks.
+**4. Smooth Decay Release:** On key release, executes an exponential decay down to ```0.0001``` over ```80ms``` before shutting down and destroying the active oscillator object to prevent memory leaks.
 
 ## Key Features
 
 • **Polyphonic Voice Allocation:** Play single notes or full chords simultaneously without voice stealing.
 • **Zero Audio Pop Artifacts:** Envelope gain nodes ramp dynamically during attack and decay stages.
 • **Unified Event Routing:** Mouse, touch, and mapped QWERTY keyboard bindings trigger identical state machines.
-• **AudioContext Auto-Resume:** Gracefully unlocks web audio when browsers enforce autoplay security policies.
+• **AudioCon Auto-Resume:** Gracefully unlocks web audio when browsers enforce autoplay security policies.
 
 ## Tech Stack Breakdown
 
 1. **Language:** Vanilla JavaScript (ES6+)
-2. **Audio Engine:** Native Web Audio API (AudioContext, OscillatorNode, GainNode)
+2. **Audio Engine:** Native Web Audio API (AudioCon, OscillatorNode, GainNode)
 3. **Styling:** Standard CSS (Flexbox layout, absolute positioning for black keys, dynamic state pseudo-classes)
 4. **Markup:** HTML5 using semantic custom data attributes (data-note, data-key)
 
@@ -34,17 +34,17 @@ It handles browser AudioContext suspension states on the fly and uses rapid line
 
 1. Press the . (dot) key on your keyboard while viewing this repo to launch GitHub's web editor instantly.
 2. Use GitHub Codespaces by clicking *Code > Codespaces > Create codespace* on main.
-3. Right-click ```bashindex.html``` and launch via your preferred live server extension.
+3. Right-click ```index.html``` and launch via your preferred live server extension.
 
 ### Option 2: Run Locally
 
 1. Clone the repository or download the files.
-2. Open ```textindex.html``` directly in any standard browser (Chrome, Firefox, Safari, Edge).
+2. Open ```index.html``` directly in any standard browser (Chrome, Firefox, Safari, Edge).
 3. Tap your keyboard (keys A through K, and numbers 4, 5, 6, 8) or click keys with your mouse to play sound.
 
 ## Repository Structure
 
-```bash
+```
 keyframe-synth/
 ├── .github/
 │   └── workflows/
@@ -64,4 +64,4 @@ keyframe-synth/
 
 [ ] Add an ADSR slider panel to tweak attack and release timing on the fly.
 
-```text"Sound in a browser shouldn't require a megabyte of audio samples when a few lines of math can synthesize it from scratch."```
+```"Sound in a browser shouldn't require a megabyte of audio samples when a few lines of math can synthesize it from scratch."```
