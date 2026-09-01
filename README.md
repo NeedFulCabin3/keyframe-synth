@@ -1,7 +1,7 @@
 # Keyframe Synth
 A polyphonic browser instrument engineered directly around the Web Audio API. Play notes instantly using your physical keyboard, mouse, or touch screen with precise audio node control and smooth envelope transitions.
 
-## Overview $ Value Proposition
+## Overview
 
 Most web audio projects struggle with clicky pop artifacts during attack/release cycles or hit browser auto-play policies head-on. keyframe-synth solves this by decoupling DOM triggers from sound generation.
 
