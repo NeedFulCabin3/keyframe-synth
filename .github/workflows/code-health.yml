@@ -1,0 +1,21 @@
+name: Code Health Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-codebase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Validate Files Exist
+        run: |
+          test -f index.html || exit 1
+          test -f style.css || exit 1
+          test -f script.js || exit 1
+          echo "All critical web files present."
